@@ -1,10 +1,16 @@
 import { useState } from 'react'
+
 function Dashboard() {
-const [count, setCount] = useState(0)
+const location = uselocation();
+const [count, setCount] = useState("")
+
+function displaydata(){
+    setuserdata(location.State);
+    console.log(userdata)
+}
 return (
     <>
-    <h1 className="text-blue-500">
-        this is the Dashboard page
+    <h1> <button onClick={displaydata}>click it!</button>
 </h1>
     </>
 )
