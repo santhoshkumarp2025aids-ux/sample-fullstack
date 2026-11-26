@@ -27,7 +27,7 @@ function handleChange(e) {
   return (
     <>
 
-      <h1 className="text-3xl font-bold text-blue-500"> Hi!</h1>
+      <h1 className="text-3xl font-bold text-blue-500"> .Hi!</h1>
       <br />
       <div>
         <form onSubmit={(e)=>print(e)}>
