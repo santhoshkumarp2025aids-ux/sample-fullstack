@@ -25,7 +25,6 @@ return (
 <br />
 
 <label>Password :</label>
-
 <input placeholder="Enter your password" required type="password" value={password}
             onChange={(e) => setPassword(e.target.value)}/>
 
