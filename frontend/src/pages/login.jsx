@@ -1,57 +1,48 @@
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-{/*function Login() {
-const [count, setCount] = useState(0)
-const [email, setEmail] = useState("")
-const [password, setPassword] = useState("")*/}
+function Login() {
+  const Navigate=useNavigate()
+  const [formdata, setformdata] = useState({
+    email:"",
+    password:""
+  })
 
-
-function Login(){
-const  Navigate=useNavigate()
-const [formdata,steFormdata]=useState({
-username:"",
-password:""
-}
-)
-function print(e) {
+  function print(e) {
     e.preventDefault()
-    console.log(formdata)
-    console.log("Login page",formdata)
-    alert("login successfully")
-    Navigate("/dashboard",{state:formdata} )
+    // console.log(formdata)
+
+    console.log("login page", formdata)
+    alert("Login Successfully")
+    Navigate("/dashboard",{state:formdata})
+  }
+
+function handleChange(e) {
+  setformdata({
+    ...formdata,
+    [e.target.name]: e.target.value
+  })
 }
 
-
-function Handlechange(e){
-    steFormdata({
-        ...formdata,[e.target.name]:e.target.value
-})}
-
-return (
+  return (
     <>
-<h1 className="text-3xl font-bold text-blue-500">Hi!</h1>
-<br />
-<div>
-<form onSubmit={print}>
 
-<label>Email :</label>
+      <h1 className="text-3xl font-bold text-blue-500"> Hi!</h1>
+      <br />
+      <div>
+        <form onSubmit={(e)=>print(e)}>
+          <label>Email :</label>
+          <input placeholder="Enter your email" required type="email" name='email' onChange={handleChange} />
+          <br />
 
-<input placeholder="Enter your username" required type="text" name='username'
-            onChange={Handlechange}/>
+          <label>Password :</label>
+          <input placeholder="Enter your password" required type="password" name='password' onChange={handleChange}/>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </>
+  )
+}
 
-<br />
-
-<label>Password :</label>
-<input placeholder="Enter your password" required type="password" name='password'
-            onChange={Handlechange}/>
-
-<br />
-<button type="submit">Submit</button>
-</form>
-</div>
-</>
-)
-
-} 
 export default Login
