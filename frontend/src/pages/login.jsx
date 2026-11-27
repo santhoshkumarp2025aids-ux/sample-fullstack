@@ -44,8 +44,8 @@ function handleChange(e) {
           <label className="block text-black text-blue-500">Password :</label>
           <input placeholder="Enter your password" required type="password" name='password' onChange={handleChange}
           className="border p-1 rounded"/>
-          <br />
-          <br/><br/>
+          <br/>
+          <br/>
           <button type="submit" className=" bg-purple-600 text-white p-3 rounded-lg font-bold hover:bg-purple-800">Submit</button>
         </form>
       </div>
