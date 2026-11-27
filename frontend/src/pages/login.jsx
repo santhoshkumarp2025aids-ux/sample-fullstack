@@ -34,20 +34,19 @@ function handleChange(e) {
 
   return (
     <>
-
-      <h1 className="text-3xl font-bold text-blue-500">Hi!</h1>
-      <br />
-      <div>
+      <div className="min-h-screen flex justify-center items-center">
         <form onSubmit={(e)=>print(e)}>
-          <label>Email :</label>
-          <input placeholder="Enter your email" required type="email" name='email' onChange={handleChange} />
+          <label className="block text-black text-blue-500">Email :</label>
+          <input placeholder="Enter your email" required type="email" name='email' onChange={handleChange}
+          className="border p-1 rounded"/>
           <br />
 
-          <label>Password :</label>
-          <input placeholder="Enter your password" required type="password" name='password' onChange={handleChange}/>
+          <label className="block text-black text-blue-500">Password :</label>
+          <input placeholder="Enter your password" required type="password" name='password' onChange={handleChange}
+          className="border p-1 rounded"/>
           <br />
           <br/><br/>
-          <button type="submit">Submit</button>
+          <button type="submit" className=" bg-purple-600 text-white p-3 rounded-lg font-bold hover:bg-purple-800">Submit</button>
         </form>
       </div>
     </>

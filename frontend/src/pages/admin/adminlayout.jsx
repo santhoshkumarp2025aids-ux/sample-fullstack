@@ -6,10 +6,11 @@ function Adminlayout() {
             <h1>
                 Adminlayout
             </h1>
+            <br/><br/>
             <nav>
-                <Link to="admindashboard"> AdminDashboard</Link>
-                <Link to="settings"> Settings</Link>
-                <Link to="userdetails">UserDetails</Link>
+                <Link to="admindashboard"> AdminDashboard</Link><br/>
+                <Link to="settings"> Settings</Link><br/>
+                <Link to="userdetails">UserDetails</Link><br/><br/>
             </nav>
             <Outlet/>
             </>

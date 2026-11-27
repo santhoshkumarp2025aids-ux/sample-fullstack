@@ -16,27 +16,38 @@ function Register() {
         navigate("/",{state:data})
     }
     return (
-        <>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Name </label>
-            <input placeholder="Enter your name" type="text" {...register("name")} />
+        <div className="min-h-screen flex justify-center items-center">
+        <form onSubmit={handleSubmit(onSubmit)}
+            className="bg-white w-96 p-8 rounded-2xl shadow-2xl">
+                <h1 className="text font-bold text-center text-purple-500">
+                Register
+            </h1>
+            <p className="text-center font-bold text-red-500">
+                Create your account
+            </p>
+            <label className="block text-black text-blue-500">Name:</label>
+            <input placeholder="Enter your name" type="text" {...register("name")}
+            className="border p-1 rounded"/>
             <p>{errors.name?.message}</p>
 
-            <label>Email </label>
-            <input placeholder="Enter your name" type="email" {...register("email")} />
+            <label className="block text-black text-blue-500">Email:</label>
+            <input placeholder="Enter your name" type="email" {...register("email")} 
+            className="border p-1 rounded"/>
             <p>{errors.email?.message}</p>
 
-            <label>Password </label>
-            <input placeholder="Enter Password"  type="password" {...register("password")} />
+            <label className="block text-black text-blue-500">Password:</label>
+            <input placeholder="Enter Password"  type="password" {...register("password")} 
+            className="border p-1 rounded "/>
             <p>{errors.password?.message}</p>
 
-            <label>Age </label>
-            <input placeholder="Enter your age"  type="number" {...register("age")} />
-            <p>{errors.age?.message}</p>
+            <label className="block text-black text-blue-500">Age:</label>
+            <input placeholder="Enter your age"  type="number" {...register("age")} 
+            className="border p-1 rounded"/>
+            <p>{errors.age?.message}</p><br/>
 
-            <button type="submit">Submit</button>
+            <button type="submit"  className=" bg-purple-600 text-white p-3 rounded-lg font-bold hover:bg-purple-800">Submit</button>
         </form>
-        </>
+        </div>
     );
 }
 
