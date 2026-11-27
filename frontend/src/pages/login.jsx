@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { registerSchema } from '../components/formschema/registerschema'
 
 function Login() {
   const Navigate=useNavigate()
-  const [formdata, setformdata] = useState({
+  const location = useLocation()
+  const registerdata=location.state;
+  const [logindata, setlogindata] = useState({
     email:"",
     password:""
   })
@@ -11,15 +14,20 @@ function Login() {
   function print(e) {
     e.preventDefault()
     // console.log(formdata)
-
-    console.log("login page", formdata)
+    console.log("login page", logindata)
     alert("Login Successfully")
-    Navigate("/dashboard",{state:formdata})
+    if(logindata.email=== registerdata.email && logindata.password === registerdata.password){
+      console.log("login successfully");
+    }
+    else{
+        console.log("invalid")
+    }
+    Navigate("/dashboard",{state:logindata})
   }
 
 function handleChange(e) {
-  setformdata({
-    ...formdata,
+  setlogindata({
+    ...logindata,
     [e.target.name]: e.target.value
   })
 }
@@ -27,7 +35,7 @@ function handleChange(e) {
   return (
     <>
 
-      <h1 className="text-3xl font-bold text-blue-500"> .Hi!</h1>
+      <h1 className="text-3xl font-bold text-blue-500">Hi!</h1>
       <br />
       <div>
         <form onSubmit={(e)=>print(e)}>
@@ -38,6 +46,7 @@ function handleChange(e) {
           <label>Password :</label>
           <input placeholder="Enter your password" required type="password" name='password' onChange={handleChange}/>
           <br />
+          <br/><br/>
           <button type="submit">Submit</button>
         </form>
       </div>

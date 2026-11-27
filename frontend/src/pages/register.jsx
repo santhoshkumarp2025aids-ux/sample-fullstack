@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema } from "../components/formschema/registerSchema";
+import { registerSchema } from "../components/formschema/registerschema";
 
 
 function Register() {
@@ -13,7 +13,7 @@ function Register() {
     function onSubmit(data){
         console.log(data)
         alert("register sucessful")
-        navigate("/")
+        navigate("/",{state:data})
     }
     return (
         <>
