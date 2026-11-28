@@ -16,7 +16,8 @@ function Login() {
     // console.log(formdata)
     console.log("login page", logindata)
     alert("Login Successfully")
-    if(logindata.email=== registerdata.email && logindata.password === registerdata.password){
+    if(logindata.email=== registerdata.email &&
+      logindata.password === registerdata.password){
       console.log("login successfully");
     }
     else{
